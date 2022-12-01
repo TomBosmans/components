@@ -1,0 +1,27 @@
+{
+  "name": "@tbosmans/component-library",
+  "version": "0.0.1",
+  "description": "Component library.",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "typescript",
+    "react",
+    "components",
+    "library"
+  ],
+  "author": "Tom Bosmans",
+  "license": "ISC",
+  "devDependencies": {
+    "@tbosmans/typescript-utils": "^0.0.1",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.9",
+    "typescript": "^4.9.3"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
