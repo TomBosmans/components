@@ -4,7 +4,11 @@
   "description": "Component library.",
   "main": "src/index.ts",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint --fix .",
+    "lint:check": "eslint ."
   },
   "keywords": [
     "typescript",
@@ -15,6 +19,7 @@
   "author": "Tom Bosmans",
   "license": "ISC",
   "devDependencies": {
+    "@tbosmans/eslint-config": "^1.0.3",
     "@tbosmans/typescript-utils": "^0.0.1",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.9",
@@ -22,6 +27,8 @@
   },
   "peerDependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  }
+    "react-dom": "^18.2.0",
+    "react-jss": "^10.9.2"
+  },
+  "prettier": "@tbosmans/eslint-config/prettierrc"
 }
