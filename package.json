@@ -8,7 +8,9 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "eslint --fix .",
-    "lint:check": "eslint ."
+    "lint:check": "eslint .",
+    "storybook": "start-storybook -p 6006 --disable-telemetry",
+    "build-storybook": "build-storybook --disable-telemetry"
   },
   "keywords": [
     "typescript",
@@ -19,10 +21,23 @@
   "author": "Tom Bosmans",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.20.5",
+    "@storybook/addon-actions": "^6.5.14",
+    "@storybook/addon-essentials": "^6.5.14",
+    "@storybook/addon-interactions": "^6.5.14",
+    "@storybook/addon-links": "^6.5.14",
+    "@storybook/builder-webpack4": "^6.5.14",
+    "@storybook/manager-webpack4": "^6.5.14",
+    "@storybook/react": "^6.5.14",
+    "@storybook/testing-library": "^0.0.13",
     "@tbosmans/eslint-config": "^1.0.3",
     "@tbosmans/typescript-utils": "^0.0.1",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.9",
+    "babel-loader": "^8.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-jss": "^10.9.2",
     "typescript": "^4.9.3"
   },
   "peerDependencies": {
