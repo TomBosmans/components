@@ -7,17 +7,30 @@ export type Props = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivEle
   help?: boolean
 }
 
-export type Ref = HTMLDivElement
+export type Ref = {
+  containerElement: HTMLDivElement | null
+  tooltipElement: HTMLSpanElement | null
+
+  /**
+   * Always show the tooltip
+   */
+  show: () => void
+
+  /**
+   * Undo always show the tooltip
+   */
+  hide: () => void
+}
 
 export type StyleProps = { text: string } & Dimensions
 
 export type Dimensions = {
   tooltip: {
-    width: number,
+    width: number
     heigth: number
-  },
+  }
   target: {
-    width: number,
+    width: number
     heigth: number
   }
 }

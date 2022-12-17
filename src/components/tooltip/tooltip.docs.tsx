@@ -1,14 +1,35 @@
+import { useRef } from "react"
 import { Button } from "../button"
 import { Paragraph } from "../paragraph"
 import { Tooltip } from "./tooltip.component"
+import { Ref } from "./tooltip.types"
 
 export default {
   title: "Tooltip",
   component: Tooltip,
 }
 
+const RefExample = () => {
+  const ref = useRef<Ref>(null)
+
+  const handleShow = () => ref.current?.show()
+  const handleHide = () => ref.current?.hide()
+
+  return (
+    <Tooltip ref={ref} text="tooltip" position="left">
+      <Paragraph measure="none">hello world</Paragraph>
+      <Button onClick={handleShow}>show</Button>
+      <Button onClick={handleHide}>hide</Button>
+    </Tooltip>
+  )
+}
+
 export const Default = () => (
   <div style={{ display: "flex", flexDirection: "column", gap: "10rem" }}>
+    <div style={{ display: "flex", flexDirection: "row", gap: "5rem", paddingLeft: "10rem" }}>
+      <RefExample />
+    </div>
+
     <div
       style={{
         display: "flex",

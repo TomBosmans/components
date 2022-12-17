@@ -1,18 +1,29 @@
-import { forwardRef } from "react"
-import { useForwardRef } from "../../hooks/useForwardRef"
-import { buildClassName } from "../../utils"
-import { useChildDimensions } from "./tooltip.hooks"
-import { useStyles } from "./tooltip.styles"
 import { Props, Ref } from "./tooltip.types"
+import { buildClassName } from "../../utils"
+import { forwardRef, useRef } from "react"
+import { useChildDimensions } from "./tooltip.hooks"
+import { useCreateRef } from "./tooltip.ref"
+import { useStyles } from "./tooltip.styles"
 
 export const Tooltip = forwardRef<Ref, Props>(
   (
-    { text, position = "bottom", children, arrow = true, help=false, className: extraClassName, ...props },
+    {
+      text,
+      position = "bottom",
+      children,
+      arrow = true,
+      help = false,
+      className: extraClassName,
+      ...props
+    },
     ref,
   ) => {
-    const localRef = useForwardRef(ref)
-    const dimensions = useChildDimensions(localRef)
+    const containerRef = useRef<HTMLDivElement>(null)
+    const tooltipRef = useRef<HTMLSpanElement>(null)
+    const dimensions = useChildDimensions(containerRef)
     const styles = useStyles({ text, ...dimensions })
+    useCreateRef(ref, containerRef, tooltipRef)
+
     const className = buildClassName(
       styles.tooltip,
       styles[position],
@@ -22,9 +33,9 @@ export const Tooltip = forwardRef<Ref, Props>(
     )
 
     return (
-      <div ref={localRef} className={className} {...props}>
+      <div ref={containerRef} className={className} {...props}>
         {children}
-        <span role="tooltip" className={styles.text}>
+        <span ref={tooltipRef} role="tooltip" className={styles.text}>
           {text}
         </span>
       </div>
