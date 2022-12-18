@@ -1,13 +1,8 @@
-import { DetailedHTMLProps, HTMLAttributes } from "react"
-import { Align, Measure } from "../../types"
+import { Align, HtmlElementProps, Measure } from "../../types"
 
-export type Props = DetailedHTMLProps<
-  HTMLAttributes<HTMLParagraphElement>,
-  HTMLParagraphElement
-> & {
+export type Ref = HTMLParagraphElement
+export type Props = HtmlElementProps<HTMLParagraphElement> & {
   size?: "l" | "m" | "s"
   measure?: Measure
   align?: Align
 }
-
-export type Ref = HTMLParagraphElement

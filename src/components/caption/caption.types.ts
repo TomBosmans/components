@@ -1,7 +1,6 @@
-import { DetailedHTMLProps, HTMLAttributes } from "react"
-
-export type Props = DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement> & {
-  size: "xl" | "l" | "m"
-}
+import { HtmlElementProps } from "../../types"
 
 export type Ref = HTMLSpanElement
+export type Props = HtmlElementProps<HTMLSpanElement> & {
+  size: "xl" | "l" | "m"
+}

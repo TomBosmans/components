@@ -1,6 +1,6 @@
-import { DetailedHTMLProps, HTMLAttributes } from "react"
+import { HtmlElementProps } from "../../types"
 
-export type Props = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> & {
+export type Props = HtmlElementProps<HTMLDivElement> & {
   text: string
   position?: "left" | "right" | "bottom" | "top"
   arrow?: boolean

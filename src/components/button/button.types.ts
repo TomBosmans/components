@@ -1,9 +1,7 @@
-import { ButtonHTMLAttributes, DetailedHTMLProps } from "react"
+import { HtmlElementProps } from "../../types"
 
-export type Props = DetailedHTMLProps<
-  ButtonHTMLAttributes<HTMLButtonElement>,
-  HTMLButtonElement
-> & {
+export type Ref = HTMLButtonElement
+export type Props = HtmlElementProps<HTMLButtonElement> & {
   unstyled?: boolean
   variant?:
   | "default"
@@ -14,5 +12,3 @@ export type Props = DetailedHTMLProps<
   | "outline"
   | "outlineInverse"
 }
-
-export type Ref = HTMLButtonElement

@@ -1,7 +1,6 @@
-import { DetailedHTMLProps, HTMLAttributes } from "react"
-import { Align, HeadingType, Measure } from "../../types"
+import { Align, HeadingType, HtmlElementProps, Measure } from "../../types"
 
-export type Props = DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement> & {
+export type Props = HtmlElementProps<"h1"> & {
   type: HeadingType
   size: "xl" | "l" | "m" | "s"
   measure?: Measure
